@@ -7,6 +7,12 @@ namespace Demo.Domain.DemoContext.Commands.Input
 {
     public class ValuesCommand : Notifiable, ICommand
     {
+        public ValuesCommand(int valorInicial, int meses)
+        {
+            this.valorInicial = valorInicial;
+            this.meses = meses;
+        }
+
         public int valorInicial { get; set; }
         public int meses { get; set; }
 
