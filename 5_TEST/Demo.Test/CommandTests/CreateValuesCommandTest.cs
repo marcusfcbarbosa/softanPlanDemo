@@ -6,14 +6,14 @@ namespace Demo.Test.CommandTests
     [TestClass]
     public class CreateValuesCommandTest
     {
-        private readonly ValuesCommand _invalidCommand = new ValuesCommand(10,5);
-        private readonly ValuesCommand _validCommand = new ValuesCommand(0,0);
+        private readonly ValuesCommand _invalidCommand = new ValuesCommand(0,0);
+        private readonly ValuesCommand _validCommand = new ValuesCommand(10,3);
         public CreateValuesCommandTest()
         {
             _invalidCommand.Validate();
             _validCommand.Validate();
         }
-        
+
         //RED GREEN REFACTOR
         [TestMethod]
         public void DadoCommandoInvalido()
