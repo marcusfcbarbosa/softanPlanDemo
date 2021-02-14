@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Demo.Test.CommandTests
 {
+
     [TestClass]
     public class CreateValuesCommandTest
     {
