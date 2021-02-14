@@ -8,10 +8,10 @@
     <PackageReference Include="FluentValidator" Version="2.0.4" />
     <PackageReference Include="MediatR" Version="8.1.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.0.5" />
+    
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0-rc4" />
     <PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="5.5.0" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\..\2_DOMAIN\Demo.Domain\Demo.Domain.csproj" />
   </ItemGroup>
