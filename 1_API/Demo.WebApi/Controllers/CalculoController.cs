@@ -12,12 +12,18 @@ namespace Demo.WebApi.Controllers
     [Route("api/[controller]")]
     public class CalculoController : ControllerBase
     {
-        [HttpPost]
-        [Route("")]
-        public async Task<ICommandResult> Create([FromServices] IMediator mediator,
-        [FromBody] ValuesCommand command)
+        private readonly CalculoJurosHandler _calculoJurosHandler;
+        public CalculoController(CalculoJurosHandler calculoJurosHandler)
         {
-            return await  mediator.Send(command);
+            _calculoJurosHandler = calculoJurosHandler;
         }
+
+        [HttpPost]
+        [Route("calculajuros")]
+        public ICommandResult Calcula([FromBody] ValuesCommand command)
+        {
+            return _calculoJurosHandler.Handle(command);
+        }
+        
     }
 }

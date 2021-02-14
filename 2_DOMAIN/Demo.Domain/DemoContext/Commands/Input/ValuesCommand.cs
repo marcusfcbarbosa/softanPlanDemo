@@ -1,11 +1,11 @@
 using Demo.Shared.Commands;
 using FluentValidator;
 using FluentValidator.Validation;
-using MediatR;
+
 
 namespace Demo.Domain.DemoContext.Commands.Input
 {
-    public class ValuesCommand : Notifiable, IRequest<ICommandResult>,  ICommand
+    public class ValuesCommand : Notifiable, ICommand
     {
         public int valorInicial { get; set; }
         public int meses { get; set; }

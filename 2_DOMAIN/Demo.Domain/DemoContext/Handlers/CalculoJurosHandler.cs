@@ -10,10 +10,11 @@ using MediatR;
 
 namespace Demo.Domain.DemoContext.Handlers
 {
-    public class CalculoJurosHandler : IRequestHandler<ValuesCommand, ICommandResult>
+    public class CalculoJurosHandler 
+    : Notifiable,
+    ICommandHandler<ValuesCommand>
     {
-    
-        public async Task<ICommandResult> Handle(ValuesCommand request, CancellationToken cancellationToken)
+        public ICommandResult Handle(ValuesCommand request)
         {
             request.Validate();
             if(!request.Valid){

@@ -1,8 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
+using Demo.Domain.DemoContext.Handlers;
 using Demo.WebApi.InfraEstructure;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -35,6 +38,17 @@ namespace Demo.WebApi
 
             services.AddControllers();
             DocumentacaoApi(services);
+            registrandoDependencias(services);
+        }
+        public void registrandoDependencias(IServiceCollection services)
+        {
+            #region"Handlers"
+            services.AddScoped<CalculoJurosHandler, CalculoJurosHandler>();
+            #endregion
+
+            #region"Mediator"
+            services.AddMediatR(Assembly.GetExecutingAssembly());
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
